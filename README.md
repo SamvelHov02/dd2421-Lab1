@@ -1,6 +1,10 @@
 # dd2421-Lab1
 
-Lab 1 for course DD2421 Machine Learning
+Lab 1 for course DD2421 Machine Learning.
+Team memebers:
+
+- Zhiliia Hamad
+- Samvel Hovhannisyan
 
 ## Monk Datasets
 
@@ -22,9 +26,8 @@ Lab 1 for course DD2421 Machine Learning
 
 ### Assignment 5
 
-## Pruning 
+## Pruning
 
-### Assignment 6 
+### Assignment 6
 
 ### Assignment 7
-
