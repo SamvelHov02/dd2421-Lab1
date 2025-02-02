@@ -31,7 +31,7 @@ Example: Rolling a die
 
 $p_1=\frac{1}{6},p_2 = \frac{1}{6},...,p_6 =\frac{1}{6} \Rightarrow Entropy = \sum{p_i} = 6 \cdot -\frac{1}{6} \log_{2}(\frac{1}{6}) ≈ 2.58$
 
-A non-uniform distribution means that some outcomes are more likely than others, making it more predictable and results in lower entropy. 
+A non-uniform distribution means that some outcomes are more likely than others, making it more predictable and results in lower entropy.
 
 Example: Rolling a fake die
 
@@ -58,10 +58,10 @@ When the information gain is maximized, the entropy of the subsets $S_k$ after t
 ### Assignment 5
 
 | Dataset  | Error Training | Error Test |
-| -------- | -------------- | ---------- |
-| MONK-1   | 0.0            | 0.1713 |
-| MONK-2   | 0.0            | 0.3079 |
-| MONK-3   | 0.0            | 0.0556 |
+|----------|---------------|------------|
+| MONK-1   | 0.0           | 0.1713     |
+| MONK-2   | 0.0           | 0.3079     |
+| MONK-3   | 0.0           | 0.0556     |
 
 ## Pruning
 

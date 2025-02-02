@@ -1,6 +1,7 @@
 import monkdata as m 
 import dtree as d
 import drawtree_qt5 as qt
+import random
 
 def assignment1():  
     print(d.entropy(m.monk1))
@@ -49,3 +50,10 @@ def assignment5():
 assignment5()
 
 
+def partition(data, fraction):
+    ldata = list(data)
+    random.shuffle(ldata)
+    breakPoint = int(len(ldata) * fraction)
+    return ldata[:breakPoint], ldata[breakPoint:]
+
+monk1train, monk1val = partition(m.monk1, 0.6)
