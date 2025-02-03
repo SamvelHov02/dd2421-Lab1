@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import dtree
 import sys
 
@@ -36,7 +35,7 @@ class MyPainting(QWidget):
         p.end()
 
 
-def draw(p, t, x, y):
+def draw_og(p, t, x, y):
     if isinstance(t, dtree.TreeLeaf):
         p.drawText(x-3, y+15, 'T' if t.cvalue else 'F')
         return x, x+20
@@ -51,6 +50,24 @@ def draw(p, t, x, y):
     p.drawEllipse(newMid-15, y, 30, 20)
     for m in anchors:
         p.drawLine(newMid, y+20, m, y+70)
+    return newMid, xx+10
+
+    
+def draw(p, t, x, y):
+    if isinstance(t, dtree.TreeLeaf):
+        p.drawText(int(x-3), int(y+15), 'T' if t.cvalue else 'F')
+        return x, x+20
+    xx = x
+    anchors = []
+    for b in t.branches:
+        mid, xx = draw(p, t.branches[b], xx, y+70)
+        p.drawText(int(mid-3), int(y+68), str(b))
+        anchors.append(mid)
+    newMid = (x+xx)/2
+    p.drawText(int(newMid-7), int(y+15), t.attribute.name)
+    p.drawEllipse(int(newMid-15), int(y), 30, 20)
+    for m in anchors:
+        p.drawLine(int(newMid), int(y+20), int(m), int(y+70))
     return newMid, xx+10
 
 
@@ -68,7 +85,6 @@ def drawTree(tree):
 
     win.show()
     sys.exit(application.exec_())
-
 
 
 
