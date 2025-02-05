@@ -79,8 +79,10 @@ Pruning reduces overfitting by trimming parts of a tree that do not provide sign
 
 The following observations are made about the plot:
 
+•⁠  ⁠As the training fraction increases, test error generally decreases or stabilizes, which is expected since more training data leads to better generalization.
+
+•⁠  ⁠For MONK-3, the test error is consistently lower than for MONK-1, which aligns with the fact that MONK-3 is easier to learn after pruning due to the underlying rule being relatively structured and identifiable, showing that pruning has been effective in reducing some of the noise. 
+
+•⁠  ⁠Larger error bars for smaller training fractions suggest higher variance in performance, which is logical because models trained on less data are more sensitive to variation.
+
 ![Error-Fraction-function](./images/Error-fraction-function.jpeg)
-
-- As the training fraction increases, test error generally decreases or stabilizes, which is expected since more training data leads to better generalization.
-
-- For MONK-3, the test error is consistently lower than for MONK-1, which aligns with the fact that MONK-3 is easier to learn after pruning due to the underlying rule being relatively structured and identifiable, showing that pruning
