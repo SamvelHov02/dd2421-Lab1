@@ -63,6 +63,15 @@ And here is the tree that `buildTree()` builds with no specified maxdepth:
 
 ### Assignment 5
 
+The information gain on the the four nodes after the first split on attribute \(a_5\) is shown in the table.
+
+| Monk-1  / \(a_5\)  | \(a_1\)   | \(a_2\)   | \(a_3\)   | \(a_4\)   | \(a_6\)   |
+|----------|----------|----------|----------|----------|----------|
+| Node 1 | 0.00000  | 0.00000  | 0.00000  | 0.00000  | 0.00000  |
+| Node 2 | 0.04022  | 0.01506  | 0.03727  | 0.04889  | 0.02581  |
+| Node 3 | 0.03306  | 0.00220  | 0.01798  | 0.01912  | 0.04511  |
+| Node 4 | 0.20629  | 0.03390  | 0.02591  | 0.07593  | 0.00332  |
+
 | Dataset  | Error Training | Error Test |
 |----------|---------------|------------|
 | MONK-1   | 0.0           | 0.1713     |
@@ -81,8 +90,7 @@ The following observations are made about the plot:
 
 •⁠  ⁠As the training fraction increases, test error generally decreases or stabilizes, which is expected since more training data leads to better generalization.
 
-•⁠  ⁠For MONK-3, the test error is consistently lower than for MONK-1, which aligns with the fact that MONK-3 is easier to learn after pruning due to the underlying rule being relatively structured and identifiable, showing that pruning has been effective in reducing some of the noise. 
+•⁠  ⁠For MONK-3, the test error is consistently lower than for MONK-1, which aligns with the fact that MONK-3 is easier to learn after pruning due to the underlying rule being relatively structured and identifiable, showing that pruning has been effective in reducing some of the noise.
 
 •⁠  ⁠Larger error bars for smaller training fractions suggest higher variance in performance, which is logical because models trained on less data are more sensitive to variation.
-
 ![Error-Fraction-function](./images/Error-fraction-function.jpeg)

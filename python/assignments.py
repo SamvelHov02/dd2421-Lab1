@@ -26,14 +26,18 @@ def assignment4():
     
 
 def monk1BuildTree():
-    '''attributeName = d.bestAttribute(m.monk1, m.attributes)
-    for attribute in m.attributes:
-        if attribute.name == attributeName:
-            for val in attribute.values:
-                d.select(m.monk1, attribute, val)'''
-                
-    tree = d.buildTree(m.monk1,m.attributes, 2)
-    print(tree)
+    # Want to calculate the best attribute according information gain:
+    mdTable = "| Dataset | $a_1$ | $a_2$ | $a_3$ | $a_4$ | $a_6$ |\n|Monk-1 / $a_5 |$"
+    a = d.bestAttribute(m.monk1, m.attributes)
+    attributesLeft = [x for x in m.attributes if x != a]
+    for v in a.values:
+        datasetLeft = d.select(m.monk1, a, v)
+        for att in attributesLeft:
+           average = d.averageGain(dataset=datasetLeft, attribute=att)
+           mdTable += f"{average}|"
+        mdTable += "\n"
+        
+    print(mdTable)
     
 
 def pre_assignment5():
@@ -65,7 +69,7 @@ def pre_assignment6():
 
 # pre_assignment5()
 
-qt.drawTree(d.buildTree(dataset=m.monk1,attributes=m.attributes))
+# qt.drawTree(d.buildTree(dataset=m.monk1,attributes=m.attributes))
 
 
 
@@ -133,3 +137,6 @@ for train_data, test_data, name in data_sets:
     plot_pruning_results(pruning_results, name)
 
 plt.show()
+
+if __name__ == "__main__":
+    monk1BuildTree()
