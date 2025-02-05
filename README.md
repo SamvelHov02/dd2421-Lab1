@@ -55,6 +55,12 @@ When the information gain is maximized, the entropy of the subsets $S_k$ after t
 
 ## Building Decision Trees
 
+Here is the tree build with 2 levels / splits:
+![2-split-tree](./images/Tree-2-level.png)
+
+And here is the tree that `buildTree()` builds with no specified maxdepth:
+![Full-tree](./images/Full-tree.png)
+
 ### Assignment 5
 
 | Dataset  | Error Training | Error Test |
@@ -67,6 +73,14 @@ When the information gain is maximized, the entropy of the subsets $S_k$ after t
 
 ### Assignment 6
 
-Assuming that we have built a very large tree $T_0$ then theoretically this decision tree $T_0$ will have high variance and low bias and therefore it won't perform well on the validation or test data. The test error will be larger than the training data because of overfitting and the bias-variance tradeoff. Once you start to prune the tree $T_0$ into subtrees $T_1, T_2, ...$ variance will become smaller and bias will increase however the test error will decrease. Just like in gradient decent we should iterate through the subtrees until the test error no longer decreases because of pruning.
+Pruning reduces overfitting by trimming parts of a tree that do not provide significant improvements in classification accuracy on a separate validation dataset. A fully grown tree has low bias but high variance, meaning it memorizes the training data, including noise. By pruning, we make the model more stable and generalizable, reducing variance but increasing bias (in other words, trading off variance for bias). The goal is to find the right balance where the model is neither too complex (overfitting) nor too simple (underfitting).
 
 ### Assignment 7
+
+The following observations are made about the plot:
+
+![Error-Fraction-function](./images/Error-fraction-function.jpeg)
+
+- As the training fraction increases, test error generally decreases or stabilizes, which is expected since more training data leads to better generalization.
+
+- For MONK-3, the test error is consistently lower than for MONK-1, which aligns with the fact that MONK-3 is easier to learn after pruning due to the underlying rule being relatively structured and identifiable, showing that pruning
